@@ -1,15 +1,17 @@
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.div`
+    position: fixed;
+    top: 0;
     background-color: #B22222;
     margin: 0;
     display: flex;
-    position: fixed;
     width: 100%;
     align-items: center;
     justify-content: space-between;
     color: white;
     padding: 10px 0;
+  
 `
 
 export const HeaderList = styled.ul`
@@ -24,6 +26,7 @@ export const HeaderListItem = styled.li`
     font-size: 20px;
     margin: 3%;
     font-weight: 500;
+    cursor: pointer;
 `
 
 export const HeaderRight = styled.div`
@@ -35,6 +38,7 @@ export const HeaderRight = styled.div`
         font-size: 40px;
         margin-left: auto;
         margin-right: 20px;
+        cursor: pointer;
     }
 `
 export const HeaderMiddle = styled.div`
