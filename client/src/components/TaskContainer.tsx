@@ -8,8 +8,14 @@ import { TaskState } from '../redux/taskSlice'
 import { User } from './User'
 
 
+
 export const Container: React.FC = () => {
     const tasks = useSelector((state: RootState) => state.tasks.tasks)
+ 
+
+    
+
+
 
   return (
     <ContainerDiv>
@@ -17,7 +23,7 @@ export const Container: React.FC = () => {
         <TaskList>
         <AddTask />
             {tasks.map((task : any) => (
-                <Task task={task} />
+                task.completed ? null : <Task task={task} key={task.id}/>
             ))}
         </TaskList>
         <User/>
