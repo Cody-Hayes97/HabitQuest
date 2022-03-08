@@ -9,17 +9,23 @@ const initialState : TaskState = {
         {
             title: 'Walk the dog',
             completed: true,
-            timestamp: Date.now()
+            timestamp: new Date().toLocaleString("en-US"),
+            worthExp: 5,
+            id: 1
         },
         {
             title: 'Walk the cat??',
             completed: false,
-            timestamp: Date.now()
+            timestamp: new Date().toLocaleString("en-US"),
+            worthExp: 30,
+            id: 2
         },
         {
             title: 'Walk the Rhino',
             completed: false,
-            timestamp: Date.now()
+            timestamp: new Date().toLocaleString("en-US"),
+            worthExp: 15,
+            id: 3
         }
     ]
 }
@@ -34,13 +40,19 @@ export const taskSlice = createSlice({
                 {
                     title: action.payload,
                     completed: false,
-                    timestamp: Date.now()
+                    timestamp: new Date().toLocaleString("en-US"),
+                    worthExp: Math.random() * 100,
+                    id: Math.random()
                 }
             ]
+        },
+        completeTask: (state, action: PayloadAction<any>) => {
+            const index = state.tasks.findIndex((todo) => todo.id === action.payload)
+            state.tasks[index].completed = true
         }
     }
 })
 
-export const {addTask} = taskSlice.actions
+export const {addTask, completeTask} = taskSlice.actions
 
 export default taskSlice.reducer
