@@ -8,6 +8,8 @@ import { RootState } from '../redux/store'
 export const User = () => {
     const userDetails = useSelector((state : RootState) => state.users)
 
+    
+
   return (
     <DetailsContainer>
         <h1>{userDetails.username}</h1>
@@ -18,7 +20,7 @@ export const User = () => {
         <p>Experience Points</p>
         <p>{userDetails.experience}/{userDetails.maxExp}</p>
         <ProgressBar now={userDetails.experience}
-         className='prog'/>
+         className='prog' max={userDetails.maxExp}/>
         </UserDetails>
     </DetailsContainer>
   )

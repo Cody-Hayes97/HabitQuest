@@ -14,6 +14,8 @@ export const TaskList = styled.div`
    height: 85vh;
    margin: 1%;
    overflow-y: scroll;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
    ::-webkit-scrollbar {
   display: none;
 }
@@ -37,4 +39,25 @@ export const TaskInput = styled.input`
         outline: none;
         
     }
+`
+export const Tab = styled.div`
+  border-bottom: 1px solid black;
+  /* border-radius: 5px; */
+  width: 50%;
+  font-weight: 500;
+  padding: 1%;
+  cursor: pointer;
+`
+export const TabContainer = styled.div`
+  display: flex;
+`
+
+export const CompleteButton = styled.button`
+  border: none;
+  background-color: rgb(245, 68, 68);
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 1%;
+  border-radius: 5px;
 `
