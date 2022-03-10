@@ -1,20 +1,21 @@
-import { Task as Container } from "../styles/task-styles"
+import { CompleteButton, Task as Container } from "../styles/task-styles"
 import { useSelector, useDispatch } from 'react-redux'
 import {completeTask} from '../redux/taskSlice'
-import { gainExp } from "../redux/userSlice"
+import { gainExp, levelUp } from "../redux/userSlice"
 
 interface IProps {
     task: ITask;
-    
+    completed: boolean
 }
 
 
-export const Task: React.FC<IProps> = ({task}) => {
+export const Task: React.FC<IProps> = ({task, completed}) => {
   const dispatch = useDispatch()
 
   const toggleComplete = () => {
     dispatch(completeTask(task.id))
     dispatch(gainExp(task.worthExp))
+    dispatch(levelUp())
 }
 
 
@@ -22,8 +23,8 @@ export const Task: React.FC<IProps> = ({task}) => {
     <Container>
         <h1>{task.title}</h1>
         <p>{task.timestamp}</p>
-        <p>{task.completed.toString()}</p>
-        <button onClick={toggleComplete}>Complete Task</button>
+        {completed ? <CompleteButton onClick={toggleComplete}>Complete Task</CompleteButton> : ""}
+        
     </Container>
   )
 }

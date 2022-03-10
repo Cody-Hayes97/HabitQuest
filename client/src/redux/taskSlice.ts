@@ -10,21 +10,21 @@ const initialState : TaskState = {
             title: 'Walk the dog',
             completed: true,
             timestamp: new Date().toLocaleString("en-US"),
-            worthExp: 5,
+            worthExp: 50,
             id: 1
         },
         {
             title: 'Walk the cat??',
             completed: false,
             timestamp: new Date().toLocaleString("en-US"),
-            worthExp: 30,
+            worthExp: 90,
             id: 2
         },
         {
             title: 'Walk the Rhino',
             completed: false,
             timestamp: new Date().toLocaleString("en-US"),
-            worthExp: 15,
+            worthExp: 25,
             id: 3
         }
     ]
@@ -41,7 +41,7 @@ export const taskSlice = createSlice({
                     title: action.payload,
                     completed: false,
                     timestamp: new Date().toLocaleString("en-US"),
-                    worthExp: Math.random() * 100,
+                    worthExp: 50,
                     id: Math.random()
                 }
             ]
