@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const HeaderContainer = styled.div`
     position: fixed;
     top: 0;
-    background-color: #B22222;
+    background-color: rgb(245, 68, 68);
     margin: 0;
     display: flex;
     width: 100%;
