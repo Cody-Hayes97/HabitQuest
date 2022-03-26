@@ -1,5 +1,5 @@
 export default {
-    port: 3000,
+    port: 5656,
     dbUri: "mongodb://localhost:27017/HabitHero",
     saltWorkFactor: 10,
     accessTokenTtl: '15m',

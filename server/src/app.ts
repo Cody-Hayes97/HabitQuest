@@ -4,11 +4,17 @@ import connect from './utils/connect'
 import logger from './utils/logger'
 import routes from './routes'
 import deserializeUser from './middleware/deserializeUser'
+import cors from 'cors'
 
 
 const app = express()
 
+ 
+ app.use(cors())
+
+
 app.use(express.json())
+
 
 app.use(deserializeUser);
 
